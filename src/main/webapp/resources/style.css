@@ -1,3 +1,8 @@
+* {
+	margin:0;
+	padding:0;
+}
+
 body {
     background-color: #CCC;
     font: 36px Helvetica, Arial;
@@ -5,16 +10,23 @@ body {
 
 #menu {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin-bottom: 5px;
 }
 
 #menu li {
     float: left;
+	margin-right: 5px;
 }
 
-#menu input[type=button] {
+input {
+	background: none repeat scroll 0 0 #999999;
     font-size: 14px;
+	border: none;
+	padding: 5px;
+}
+
+.connected, input.connected{ 
+	background: none repeat scroll 0 0 #00ff00;
 }
 
 .firefox {

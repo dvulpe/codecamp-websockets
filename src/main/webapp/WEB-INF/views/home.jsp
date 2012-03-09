@@ -28,7 +28,7 @@
             var ws = createConnection(prepareUrl(options.url));
             ws.onopen = options.open;
             ws.onmessage = onMessage;
-            ws.onclose = options.onClose;
+            ws.onclose = options.close;
 
             return {
                 "send":function (message) {
@@ -81,7 +81,15 @@
                     "open":function () {
                         ws.send({"type":"subscribe",
                             "channel":"codecamp"});
+						$("#open-connection")
+							.addClass("connected")
+							.val("Connection open");
                     },
+					"close":function() {
+						$("#open-connection")
+							.removeClass("connected")
+							.val("Open Connection");
+					},
                     "message":function (cmd) {
                         wsCallbackApi[cmd.type](cmd);
                     }});
@@ -93,7 +101,10 @@
                     ws.send({"type":"broadcastMessage",
                         "channel":"codecamp",
                         "payload":browserName + ": hello!",
-                        "party":browserName})
+                        "party":browserName});
+					$("#toggle-publishing")
+							.addClass("connected")
+							.val("Publishing");
                 };
                 $("#toggle-publishing").click(function () {
                             if (interval == null) {
@@ -102,6 +113,9 @@
                             }
                             else {
                                 clearInterval(interval);
+								$("#toggle-publishing")
+									.removeClass("connected")
+									.val("Publish");
                                 interval = null;
                             }
                         }
@@ -111,7 +125,11 @@
             window.onunload = function () {
                 ws.close();
             }
-        });
+
+	   setTimeout(function() {
+			$("#open-connection").click();
+			}, 5000);
+       });
     </script>
 </head>
 <body>
