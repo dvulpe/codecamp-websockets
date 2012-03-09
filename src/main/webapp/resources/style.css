@@ -1,0 +1,156 @@
+body {
+    background-color: #CCC;
+    font: 36px Helvetica, Arial;
+}
+
+#menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu li {
+    float: left;
+}
+
+#menu input[type=button] {
+    font-size: 14px;
+}
+
+.firefox {
+    background-color: red;
+    color: #fff;
+    position: absolute;
+    padding: 5px;
+    top: 0;
+
+    -webkit-animation-name: rise, fade;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-direction: normal;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 8s;
+
+    -moz-animation-name: rise, fade;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-direction: normal;
+    -moz-animation-timing-function: ease-out;
+    -moz-animation-duration: 8s;
+    opacity: 0;
+}
+
+.safari {
+    background-color: yellow;
+    color: #333;
+    position: absolute;
+    padding: 5px;
+    top: 0;
+
+    -webkit-animation-name: rise, fade;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-direction: normal;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 9s;
+
+    -moz-animation-name: rise, fade;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-direction: normal;
+    -moz-animation-timing-function: ease-out;
+    -moz-animation-duration: 9s;
+    opacity: 0;
+}
+
+.chrome {
+    background-color: blue;
+    color: #fff;
+    position: absolute;
+    padding: 5px;
+    top: 0;
+
+    -webkit-animation-name: rise, fade;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-direction: normal;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 6s;
+
+    -moz-animation-name: rise, fade;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-direction: normal;
+    -moz-animation-timing-function: ease-out;
+    -moz-animation-duration: 6s;
+    opacity: 0;
+}
+
+#container {
+    height: 300px;
+    margin: auto;
+    width: 400px;
+    overflow: hidden;
+    padding: 10px;
+    background-image: -webkit-gradient(linear, 0% 90%, 0% 100%, from(rgba(0, 255, 0, 0)), to(rgba(0, 255, 0, 0.1)));
+}
+
+#chat {
+    width: 450px;
+    height: 288px;
+    overflow: hidden;
+    background: #000;
+    background-image: -webkit-gradient(linear, 0% 90%, 0% 100%, from(rgba(0, 255, 0, 0)), to(rgba(0, 255, 0, 0.1)));
+    color: rgba(0, 255, 0, .9);
+    position: relative;
+    list-style-type: none;
+}
+
+@-webkit-keyframes fade{
+    0%   { opacity: 1; }
+    100% { opacity: 0;}
+}
+
+@-webkit-keyframes fall{
+   	from {top: -150px;}
+	to 	{top: 400px;}
+}
+
+@-webkit-keyframes rise {
+    from {top: 400px; opacity: 1}
+    to {top: -100px}
+}
+
+@-moz-keyframes fade{
+    0%   { opacity: 1; }
+    100% { opacity: 0;}
+}
+
+@-moz-keyframes fall{
+   	from {top: -150px; opacity: 0.5;}
+	to 	{top: 400px;}
+}
+
+@-moz-keyframes rise {
+    from {top: 400px;}
+    to {top: -100px}
+}
+
+#chat li.server {
+    position: absolute;
+    top: 0;
+
+    -webkit-transform-origin: 0%;
+    -webkit-transform: rotate(90deg);
+    -webkit-animation-name: fall, fade;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-direction: normal;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 6s;
+
+    -moz-transform-origin: 0%;
+    -moz-transform: rotate(90deg);
+    -moz-animation-name: fall, fade;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-direction: normal;
+    -moz-animation-timing-function: ease-out;
+    -moz-animation-duration: 6s;
+    opacity: 0;
+    width: 100%;
+    color: rgba(0, 255, 0, .8);
+    font-size: 18px;
+}
